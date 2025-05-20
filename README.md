@@ -1,6 +1,9 @@
-# R3
+# R3: Robust Rubric-Agnostic Reward Models
 
-The repository is the open-source implementation for **R3: Robust Rubric-Agnostic Reward Models**
+![R3](./assets/logo.png)
+
+The repository is the open-source implementation for **R3: Robust Rubric-Agnostic Reward Models**.
+
 We will release the code soon.
 
 ## Contents
