@@ -1,0 +1,18 @@
+{
+    "model_name": "rubricreward/R3-Qwen3-4B-LoRA-4k",
+    "use_vllm": true,
+    "tensor_parallel_size": 4,
+    "model_args": {
+        "max_model_len": 10000,
+        "gpu_memory_utilization": 0.9,
+        "dtype": "bfloat16",
+        "trust_remote_code": true,
+        "enforce_eager": true
+    },
+    "generation_args": {
+        "temperature": 0.6,
+        "top_p": 0.95,
+        "top_k": 20,
+        "max_tokens": 8192
+    }
+}
