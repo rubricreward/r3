@@ -1,4 +1,4 @@
-# R3: Robust Rubric-Agnostic Reward Models
+# [R3: Robust Rubric-Agnostic Reward Models](https://arxiv.org/abs/2505.13388)
 
 ![R3](./assets/logo.png)
 
