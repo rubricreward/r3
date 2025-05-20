@@ -28,9 +28,11 @@ EVAL_DATASETS = [
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-def request_openai_completion(input_item, model_id, model_config):
+def request_openai_completion(input_item, model_config):
     # Set OpenAI client
     from openai import OpenAI
+    
+    model_id = model_config.get('model_id')
     if "deepseek" in model_id:
         base_url = "https://api.deepseek.com"
     else:
@@ -70,11 +72,9 @@ def request_openai_completion(input_item, model_id, model_config):
         "response": "Error"
     }
 
-def openai_completion(messages, model_config, output_file_name, num_workers=8):
-    model_id = model_config.get('model_id')
-    
+def openai_completion(messages, model_config, output_file_name, num_workers=8):    
     lock = threading.Lock()  # for thread-safe file writing
-    partial_func = partial(request_openai_completion, model_id=model_id)
+    partial_func = partial(request_openai_completion, model_config=model_config)
 
     with open(output_file_name, 'a', encoding='utf-8') as f:
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_workers) as executor:
