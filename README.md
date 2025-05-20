@@ -1,7 +1,7 @@
 # [R3: Robust Rubric-Agnostic Reward Models](https://arxiv.org/abs/2505.13388)
 The repository is the open-source implementation for **R3: Robust Rubric-Agnostic Reward Models**.
 
-[Models](https://huggingface.co/collections/rubricreward/r3-models-681eaf578072a433274f5a99) [Datasets](https://huggingface.co/collections/rubricreward/r3-datasets-682819071912cad389d265d8) [Website](https://rubricreward,github.io)
+[Models](https://huggingface.co/collections/rubricreward/r3-models-681eaf578072a433274f5a99) [Datasets](https://huggingface.co/collections/rubricreward/r3-datasets-682819071912cad389d265d8) 
 ![R3](./assets/logo.png)
 
 We will release the code soon.
