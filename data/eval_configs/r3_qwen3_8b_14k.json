@@ -1,5 +1,5 @@
 {
-    "model_name": "rubricreward/R3-Qwen3-8B-14k",
+    "model_id": "rubricreward/R3-Qwen3-8B-14k",
     "use_vllm": true,
     "tensor_parallel_size": 4,
     "model_args": {
