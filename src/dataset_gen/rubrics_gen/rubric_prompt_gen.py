@@ -11,8 +11,8 @@ import os
 import json
 import argparse
 
-from ..outlines_schema.evaluation_schema import EvaluationRubric, PointwiseScoreSchema, PairwiseScoreSchema, BinaryScoreSchema
-from ..outlines_schema.prompts import evaluate_pointwise, evaluate_pairwise, evaluate_binary
+from .evaluation_schema import EvaluationRubric, PointwiseScoreSchema, PairwiseScoreSchema, BinaryScoreSchema
+from .prompts import evaluate_pointwise, evaluate_pairwise, evaluate_binary
 
 EVALUATION_MODE_DICT = {
     "pointwise": evaluate_pointwise,
@@ -21,9 +21,12 @@ EVALUATION_MODE_DICT = {
 }
 
 CUR_DIR = os.path.dirname(os.path.abspath(__file__))
-FEEDBACK_COLLECTION_RUBRIC_PATH = os.path.join(CUR_DIR, "modified_feedback_collection.json")
-PAIRWISE_RUBRIC_TEMPLATE_PATH = os.path.join(CUR_DIR, "pairwise_rubric_template.json")
-BINARY_RUBRIC_TEMPLATE_PATH = os.path.join(CUR_DIR, "binary_rubric_template.json")
+ROOT_DIR = os.path.abspath(os.path.dirname(os.path.dirname(CUR_DIR)))
+RUBRICS_DIR = os.path.join(ROOT_DIR, 'data', 'rubrics')
+
+FEEDBACK_COLLECTION_RUBRIC_PATH = os.path.join(RUBRICS_DIR, "modified_feedback_collection.json")
+PAIRWISE_RUBRIC_TEMPLATE_PATH = os.path.join(RUBRICS_DIR, "pairwise_rubric_template.json")
+BINARY_RUBRIC_TEMPLATE_PATH = os.path.join(RUBRICS_DIR, "binary_rubric_template.json")
 
 TEMPERATURE = 0.7
 
