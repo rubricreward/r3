@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Evaluate how well the summary captures the key points of the article on a scale from 1 to 5. Consider whether the summary includes all essential aspects while omitting unimportant details.",
+        "scoring": {
+            "1": "The summary fails to capture the key points of the article. It omits most essential aspects and includes numerous irrelevant details.",
+            "2": "The summary captures a few key points but misses several essential aspects, including some irrelevant details that detract from the main message.", 
+            "3": "The summary captures many of the key points but may overlook some important aspects. It includes a few irrelevant details that do not significantly detract from the overall understanding.",
+            "4": "The summary effectively captures most of the key points and includes all essential aspects while minimizing irrelevant details. It offers a clear understanding of the article's main message with minor omissions.",
+            "5": "The summary excellently captures all key points and essential aspects of the article, omitting unimportant details entirely. It provides a comprehensive and concise understanding of the article's main message."
+        }
+    },
+    {
+        "description": "Assess how effectively a summary encapsulates the key points from an article, focusing on its ability to include essential information while excluding unnecessary details.",
+        "scoring": {
+            "1": "The summary fails to capture the main points of the article, missing critical information and including numerous irrelevant details.",
+            "2": "The summary captures some key points but omits important aspects or includes a significant amount of unimportant information.",
+            "3": "The summary adequately conveys most of the key points from the article, with minor omissions or inclusion of unimportant details.",
+            "4": "The summary effectively captures almost all key points, with only minor omissions or minimal inclusion of unnecessary information.",
+            "5": "The summary captures all essential points of the article, providing a clear and concise representation of the original content."
+        }
+    },
+    {
+        "description":"Evaluate how well the summary captures the key points of the article, ensuring it includes all essential aspects while omitting unimportant details.",
+        "scoring": {
+            "1": "The summary fails to capture the key points of the article, missing essential information and including irrelevant or misleading details.",
+            "2": "The summary captures some key points but omits significant information or includes unnecessary details, leading to a partial understanding of the article's content.",
+            "3": "The summary captures most key points and provides a general understanding of the article, though some important aspects may be missing or overshadowed by minor details.",
+            "4": "The summary effectively captures the key points of the article with only minor omissions or inclusion of extraneous details, providing a clear and concise understanding.",
+            "5": "The summary perfectly encapsulates all key points of the article, omitting irrelevant details and providing a thorough and clear understanding of the content."
+        }
+    }
+]

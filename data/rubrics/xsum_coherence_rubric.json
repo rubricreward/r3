@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Evaluate whether the sentences in the summary flow logically and form a cohesive, natural-sounding whole on a scale from 1 to 5.",
+        "scoring": {
+            "1": "The summary lacks logical flow and cohesion, with sentences appearing disjointed and creating a disorganized narrative.",
+            "2": "The summary shows minimal logical flow and cohesion, with noticeable gaps in connection between sentences, leading to a somewhat disjointed narrative.",
+            "3": "The summary exhibits moderate logical flow and cohesion, with some areas where the connection between sentences is unclear or awkward.",
+            "4": "The summary generally flows logically and cohesively, with minor areas needing improvement in sentence connection and narrative smoothness.",
+            "5": "The summary flows seamlessly and cohesively, with sentences naturally connecting to form a clear and engaging narrative."
+        }
+    },
+    {
+        "description": "Evaluate the logical flow and cohesiveness of sentences within a summary, ensuring they form a cohesive and natural-sounding whole, on a scale from 1 to 5.",
+        "scoring": {
+            "1": "The sentences within the summary are disjointed and lack logical flow, making the summary difficult to follow and understand.",
+            "2": "The summary shows minimal logical flow, with some sentences connecting, but overall it feels fragmented and lacks coherence.",
+            "3": "The summary exhibits a moderate level of logical flow, with most sentences connecting logically, though some transitions may feel forced or unnatural.",
+            "4": "The summary is mostly cohesive, with sentences logically flowing into one another, though minor improvements could enhance naturalness and flow.",
+            "5": "The summary is highly cohesive and logically structured, with sentences flowing naturally and forming a seamless and coherent whole."
+        }
+    },
+    {
+        "description": "Evaluate whether the sentences in the summary flow logically and form a cohesive, natural-sounding whole on a scale from 1 to 5.", 
+        "scoring": {
+            "1": "The summary lacks logical flow and cohesion, with sentences that feel disconnected and awkward, disrupting the natural reading experience.",
+            "2": "The summary shows minimal logical flow and cohesion, but several sentences feel disjointed or awkward, affecting readability.",
+            "3": "The summary demonstrates moderate logical flow and cohesion, with most sentences fitting together naturally, though some transitions may feel clumsy or forced.",
+            "4": "The summary generally flows logically and cohesively, with sentences naturally following one another, though there may be minor awkwardness in transitions.",
+            "5": "The summary flows seamlessly and cohesively, with each sentence naturally and logically leading to the next, creating a smooth, engaging reading experience."
+        }
+    }
+]   

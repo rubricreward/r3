@@ -1,0 +1,23 @@
+[
+    {
+        "description": "Does the summary accurately reflect the factual content of the original article without introducing incorrect information?",
+        "scoring": {
+            "false": "The summary contains factual errors, hallucinations, or misrepresents key information from the article.",
+            "true": "The summary accurately represents the facts and key points from the article without any distortions."
+        }
+    },
+    {
+        "description": "Are the entities, events, and relationships in the summary consistent with those described in the article?",
+        "scoring": {
+            "false": "The summary alters or misstates entities, events, or their relationships as presented in the article.",
+            "true": "All entities, events, and their relationships are correctly preserved from the article in the summary."
+        }
+    },
+    {
+        "description": "Does the summary make inferences or assumptions not directly supported by the article?",
+        "scoring": {
+            "false": "The summary includes inferences, interpretations, or assumptions that are not substantiated by the article.",
+            "true": "The summary avoids unfounded inferences and only includes information explicitly supported by the article."
+        }
+    }
+]
