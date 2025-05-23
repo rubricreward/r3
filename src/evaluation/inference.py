@@ -19,7 +19,7 @@ TOKENIZER = None
 
 EVAL_DATASETS = [
     "rubricreward/R3-eval-FeedbackBench",
-    "rubricreward/R3-eval-reward-bench"
+    "rubricreward/R3-eval-reward-bench",
     "rubricreward/R3-eval-XSUM",
     "rubricreward/R3-eval-MMLU-STEM",
     "rubricreward/R3-eval-RM-Bench",
@@ -171,7 +171,7 @@ if __name__ == '__main__':
 
     config_path = args.model_config_path.strip()
     model_config = {}
-    if os.path.exists(config_path):
+    if not os.path.exists(config_path):
         config_abs_path = os.path.join(ROOT_DIR, config_path)
         if not os.path.exists(config_path):
             config_abs_path = os.path.join(ROOT_DIR, config_path)
@@ -180,6 +180,8 @@ if __name__ == '__main__':
             else:
                 logging.warning(f"Config path `{config_path}` is not found, switching to `{config_abs_path}`")
                 config_path = config_abs_path
+    else:
+        config_abs_path = config_path
     
     if not config_abs_path.endswith('.json'):
         raise NotImplementedError("Config path is not in JSON Format, other format is not implemented yet!")
