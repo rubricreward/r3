@@ -1,0 +1,32 @@
+[
+    {
+        "description": "Evaluate the quality of sentences in the summary based on their grammatical correctness, naturalness, and overall writing quality on a scale from 1 to 5.",
+        "scoring": {
+            "1": "The sentences are poorly written, with frequent grammatical errors and awkward phrasing, making them difficult to understand.",
+            "2": "The sentences contain several grammatical mistakes and awkward expressions, detracting from their overall clarity and naturalness.",
+            "3": "The sentences are mostly correct with occasional grammatical errors, but they may still include some unnatural phrasing or awkwardness.",
+            "4": "The sentences are well-written with minor grammatical errors and generally read naturally, though there might be slight room for enhancement.",
+            "5": "The sentences are excellently written, grammatically flawless, and read naturally, contributing to a high-quality and clear summary."
+        }
+    },
+    {
+        "description": "Evaluate whether the sentences in the summary are well-written, grammatically correct, and natural, on a scale from 1 to 5.",
+        "scoring": {
+            "1": "The sentences are filled with grammatical errors, unnatural phrasing, and are difficult to read or understand.",
+            "2": "The sentences contain several grammatical errors and awkward phrasing, partially affecting clarity and readability.",
+            "3": "The sentences are mostly correct with occasional grammatical errors and some unnatural phrasing; overall, they are understandable.",
+            "4": "The sentences are largely free from grammatical errors, mostly natural, and generally clear, with only minor improvements needed.",
+            "5": "The sentences are grammatically perfect, natural, and exceptionally clear, making the summary easy to read and understand."
+        }
+    },
+    {
+        "description": "Evaluate whether the sentences in the summary are well-written, grammatically correct, and natural on a scale from 1 to 5.",
+        "scoring": {
+            "1": "The sentences are poorly constructed, riddled with grammatical errors, and lack natural flow, making them difficult to read and understand.",
+            "2": "The sentences demonstrate a basic understanding of grammar but contain frequent errors and awkward phrasing that disrupt the natural flow.",
+            "3": "The sentences are mostly well-constructed with occasional grammatical errors and unnatural phrasing that slightly hinder readability.",
+            "4": "The sentences are well-written with minor grammatical errors and occasional awkward phrasing, maintaining a natural flow overall.",
+            "5": "The sentences are excellently written, grammatically flawless, and exhibit a natural and effortless flow, making them easy to read and comprehend."
+        }
+    }
+]

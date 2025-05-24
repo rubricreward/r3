@@ -1,0 +1,33 @@
+[
+    {
+        "description": "Evaluate whether the facts in the summary align with those in the original article, ensuring that the summary accurately represents all facts without introducing any false information. Rate the summary on a scale of 1 to 5.",
+        "scoring": {
+            "1": "The summary contains numerous factual inaccuracies and misalignments with the original article, often introducing false information.",
+            "2": "The summary has several factual inaccuracies and misalignments, with some instances of false information introduced.",
+            "3": "The summary is mostly aligned with the original article but contains minor factual inaccuracies or misalignments. There may be minor instances of false information.",
+            "4": "The summary is largely accurate and aligns well with the original article, with only a few minor factual inaccuracies or misalignments. No false information is introduced.",
+            "5": "The summary is completely accurate and aligns perfectly with the original article, with no factual inaccuracies or introduced false information."
+        }
+    },
+    {
+        "description": "Evaluate whether the facts in the summary align with those in the original article, ensuring the summary accurately represents all facts without introducing false information. Rate the summary on a scale of 1 to 5.",
+        "scoring": {
+            "1": "The summary contains significant inaccuracies or fabrications, failing to represent the facts from the original article.",
+            "2": "The summary includes some facts from the original article but also introduces notable inaccuracies or false information.",
+            "3": "The summary is mostly accurate, capturing the key facts from the original article, with some minor inaccuracies or omissions.",
+            "4": "The summary is largely accurate and aligns with the original article, including nearly all factual elements with only minor discrepancies.",
+            "5": "The summary is completely accurate, thoroughly representing all facts from the original article without introducing any false information."
+        }
+    },
+    {
+        "description": "Evaluate whether the facts in the summary align with those in the original article. This rubric assesses the accuracy and completeness of the summary in representing the original content without introducing false information. Rate the summary on a scale of 1 to 5.",
+        "scoring": {
+            "1": "The summary contains numerous factual inaccuracies and misrepresentations of the original article. Key facts are missing, and the summary may introduce false information.",
+            "2": "The summary captures some facts from the original article but includes several inaccuracies or misrepresentations. Some key facts are missing or incorrectly represented.",
+            "3": "The summary is mostly accurate, capturing the majority of key facts from the original article. However, there are minor inaccuracies or omissions in representing the facts.",
+            "4": "The summary is largely accurate and comprehensive, correctly representing nearly all key facts from the original article with only a few minor inaccuracies or omissions.",
+            "5": "The summary is completely accurate and comprehensive, accurately representing all key facts from the original article without introducing any false information."
+        }
+    }
+
+]
