@@ -1,0 +1,23 @@
+[
+    {
+        "description": "Your task is to select the response that is the most helpful, factually accurate, and relevant to the given query.",
+        "scoring": {
+            "response_1": "Response 1 is the preferred choice over Response 2.",
+            "response_2": "Response 2 is the preferred choice over Response 1."
+        }
+    },
+    {
+        "description": "Your task is to select the response that is the most helpful, factually accurate, and relevant to the given query.",
+        "scoring": {
+            "response_1": "Response 1 provided better response, rejecting Response 2.",
+            "response_2": "Response 2 provided better response, rejecting Response 1."
+        }
+    },
+    {
+        "description": "Your task is to select the response that is the most helpful, factually accurate, and relevant to the given query.",
+        "scoring": {
+            "response_1": "Response 1 is superior, meaning Response 2 is not chosen.",
+            "response_2": "Response 2 is superior, meaning Response 1 is not chosen."
+        }
+    }
+]
