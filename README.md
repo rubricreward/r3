@@ -38,7 +38,7 @@
   <img src="./assets/table1.png" alt="Table 1: R3 Tasks and Rubric Coverage" width="80%"/>
 </p>
 
-**Table 1** compares R3 to existing reward models across key dimensions:
+**The table above** compares R3 to existing reward models across key dimensions:
 
 - **🧠 Task Diversity**: R3 supports *point-wise*, *pairwise*, and *binary classification* tasks—covering instruction following, reasoning, and factuality.
 - **📊 Supervision Format**: It handles all major data formats: point-wise scores, preference comparisons, and classification-based labels.
@@ -52,7 +52,7 @@ In short, R3 offers **full-spectrum functionality**—matching or exceeding othe
   <img src="./assets/dataset.png" alt="Dataset Breakdown by Type" width="80%"/>
 </p>
 
-R3 is trained on a diverse, carefully curated mix of point-wise, pair-wise, and binary tasks:
+R3 is trained on a diverse, carefully curated mix of point-wise, pair-wise, and binary tasks dataset as shown in the above diagram:
 
 - **🗣️ General Chat & Instruction-Following**: Includes open-domain instruction and user preference datasets such as *Tulu*, *UltraFeedback*, and *Skywork Reward Preference*. These cover both point-wise and pairwise supervision signals.
 - **🧠 Reasoning Tasks**: Focuses on math and code evaluations using datasets like *Math-Step-DPO-10K* and *AceCodePair-300K*, with annotations targeting correctness and reasoning quality.
