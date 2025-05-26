@@ -54,30 +54,18 @@ bbh_subsets = {
     "word_sorting": "Sort a list of words.",
 }
 
-
-def get_args():
-    # fmt: off
-    parser = argparse.ArgumentParser("Generate rubric for all BBH tasks.")
-    parser.add_argument("--output_path", type=Path, help="Path to store the rubric results in JSONL.")
-    parser.add_argument("--dataset_name", type=str, default="lukaemon/bbh", help="HuggingFace dataset namespace for BBH.")
-    parser.add_argument("--n_fewshot", type=int, default=3, help="Number of fewshot examples to show for a given task.")
-    parser.add_argument("--openai_model", type=str, default="gpt-4o-mini", help="OpenAI model to use for rubric generation.")
-    parser.add_argument("--sample_rubrics", type=Path, default=None, help="Path to sample rubrics.")
-    # fmt: on
-    return parser.parse_args()
-
 def create_prompt(
     task_description: str,
     fewshot: int,
     sample_rubrics: list[dict[str, str]],
 ) -> str:
     system_prompt = """
-You are an expert evaluator. Given a defined task, analyze the task and create a rubric using a Likert scale from 1 to 5 to that will help to perform the given task. 
-Please follow these steps:
-1. Explain the criteria for distinguishing between the scores (e.g., how a score of 1 differs from a score of 5).
-2. Based on your analysis, generate a rubric in JSON format with the Likert scale ranging from 1 to 5, including descriptions for each score.
-3. Ensure that the rubric is clear, actionable, and covers key aspects of the task.
-    """
+        You are an expert evaluator. Given a defined task, analyze the task and create a rubric using a Likert scale from 1 to 5 to that will help to perform the given task. 
+        Please follow these steps:
+        1. Explain the criteria for distinguishing between the scores (e.g., how a score of 1 differs from a score of 5).
+        2. Based on your analysis, generate a rubric in JSON format with the Likert scale ranging from 1 to 5, including descriptions for each score.
+        3. Ensure that the rubric is clear, actionable, and covers key aspects of the task.
+        """
 
     def _add_fewshot(fewshot):
         return (
@@ -91,20 +79,19 @@ Please follow these steps:
         )
 
     prompt = f"""
-{system_prompt}
+        {system_prompt}
 
-### Task
-{task_description}
-{_add_fewshot(fewshot)}
+        ### Task
+        {task_description}
+        {_add_fewshot(fewshot)}
 
-{_generate_examples(sample_rubrics, title="### Example rubrics (Unrelated Tasks)")}
+        {_generate_examples(sample_rubrics, title="### Example rubrics (Unrelated Tasks)")}
 
 
-### Rubric for current task
-"""
+        ### Rubric for current task
+        """
 
     return prompt
-
 
 def get_sample_rubrics(
     rubrics_path: Path,
@@ -128,83 +115,20 @@ def get_sample_rubrics(
     )
     return sample_rubrics
 
-# Function to process a single row
-def _process_row(row, rubric_list, input_data_column, response_column):
-    # Select a random rubric
-    selected_rubric = rubric_list[np.random.randint(0, len(rubric_list))]
-
-    # Extract relevant fields
-    input_data = row[input_data_column]
-    response = row[response_column]
-
-    created_rubric = BinaryScoreSchema(
-        true=selected_rubric.get("scoring").get('true'),
-        false=selected_rubric.get("scoring").get('false')
-    )
-    return {"prompt": evaluate_binary(row['task'], input_data, response, created_rubric)}
-
-        
-def generate_prompt_df(df, rubric_load_path: str,
-                       input_data_column: str, response_column: str,
-                       seed: int=0):
-    """
-    Args:
-        df (datasets.Dataset): Dataset to be augmented with prompt
-        rubric_load_path (str): Path to the rubric
-        evaluation_mode (str): Either pointwise, pairwise, or binary
-        input_data (str): Input to be evaluated
-        response (str): Response from the model to be judged
-        second_response (str, optional): Second response to compare for `pairwise`. Defaults to None.
-        seed (int, optional): Seed for reproducibility. Defaults to 0.
-
-    Returns: Prompt generated from model.
-    """
-    # Set random seed for reproducibility
-    np.random.seed(seed)
-    with open(rubric_load_path, 'r') as f:
-        rubric_list = json.load(f)
-    
-    new_df = df.map(lambda row: _process_row(row, rubric_list,
-                                                  input_data_column, response_column))
-    
-    return new_df
-
-def generate_dataset(dataset):
-    new_df = []
-    for i, row in enumerate(dataset):
-        task_match = re.search(r'### TASK\n(.+?)(?=\n### )', row['prompt'], re.DOTALL)
-        task = task_match.group(1).strip()
-        new_df.append({
-            "ID": f"{i}-true",
-            "input": row['input'],
-            'task': task,
-            "response": row['chosen'],
-            'answer': 'true'
-        })
-        
-        new_df.append({
-            "ID": f"{i}-false",
-            "input": row['input'],
-            'task': task,
-            "response": row['rejected'],
-            'answer': 'false'
-        })
-        
-    new_df = Dataset.from_pandas(pd.DataFrame(new_df))
-    new_df = generate_prompt_df(df=new_df, rubric_load_path=BINARY_RUBRIC_TEMPLATE_PATH,
-                                input_data_column='input', response_column='response')
-    
-    return new_df
-
 def generate_rubrics():
-    args = get_args()
+    parser = argparse.ArgumentParser("Generate rubric for all BBH tasks.")
+    parser.add_argument("--output_path", type=Path, help="Path to store the rubric results in JSONL.")
+    parser.add_argument("--n_fewshot", type=int, default=3, help="Number of fewshot examples to show for a given task.")
+    parser.add_argument("--openai_model", type=str, default="gpt-4o-mini", help="OpenAI model to use for rubric generation.")
+    parser.add_argument("--sample_rubrics", type=Path, default=None, help="Path to sample rubrics.")
+    args = parser.parse_args()
 
     all_generated_rubrics: dict[str, dict[str, Any]] = {}
     for task_name, task_description in bbh_subsets.items():
         print(f"Generating rubric for {task_name}")
 
         # Set-up fewshot examples for a given task
-        df = load_dataset(args.dataset_name, task_name, split="test").to_pandas()
+        df = load_dataset("lukaemon/bbh", task_name, split="test").to_pandas()
         fewshot = (
             df.sample(args.n_fewshot).to_dict("records") if args.n_fewshot > 0 else []
         )
