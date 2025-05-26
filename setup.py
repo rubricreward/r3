@@ -29,7 +29,7 @@ setup(
     ],
     install_requires=[
         "vllm>=0.8.5",
-        "llama-factory>=0.9.2",
+        "llamafactory>=0.9.2",
         "datasets",
         "scipy",
         "pandas",
