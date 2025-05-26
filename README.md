@@ -1,4 +1,4 @@
-# <img src="./assets/logo.png" alt="R3 Logo" width="30"/> R3: Robust Rubric-Agnostic Reward Models
+# <img src="./assets/logo.png" alt="R3 Logo" width="45"/> R3: Robust Rubric-Agnostic Reward Models
 
 <p align="left">
   <a href="https://huggingface.co/collections/rubricreward/r3-models-681eaf578072a433274f5a99">
@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/diagram.png" alt="R3 Diagram" width="50%"/>
+  <img src="./assets/diagram.png" alt="R3 Diagram" width="80%"/>
 </p>
 
 **TL;DR**: **R3** is a novel rubric-agnostic reward modeling framework that delivers **interpretable**, **controllable**, and **generalizable** score assignments. Built on **reasoning distillation**, **targeted data curation**, and a **two-stage filtering pipeline**, **R3** achieves state-of-the-art results—even when trained on datasets *10× smaller* than many baselines.
@@ -35,7 +35,7 @@
 ## 🤔 Why R3?
 
 <p align="center">
-  <img src="./assets/table1.png" alt="Table 1: R3 Tasks and Rubric Coverage" width="50%"/>
+  <img src="./assets/table1.png" alt="Table 1: R3 Tasks and Rubric Coverage" width="80%"/>
 </p>
 
 **Table 1** compares R3 to existing reward models across key dimensions:
@@ -49,7 +49,7 @@
 In short, R3 offers **full-spectrum functionality**—matching or exceeding other models on task generality and rubric flexibility, all while using **an order of magnitude less data**.
 
 <p align="center">
-  <img src="./assets/dataset.png" alt="Dataset Breakdown by Type" width="50%"/>
+  <img src="./assets/dataset.png" alt="Dataset Breakdown by Type" width="80%"/>
 </p>
 
 R3 is trained on a diverse, carefully curated mix of point-wise, pair-wise, and binary tasks:
