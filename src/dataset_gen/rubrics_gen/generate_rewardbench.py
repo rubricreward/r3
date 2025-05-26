@@ -1,12 +1,13 @@
+import os
 from datasets import load_dataset, Dataset, DatasetDict
 
-from .rubric_prompt_gen import generate_prompt_df, PAIRWISE_RUBRIC_TEMPLATE_PATH
+from .rubric_prompt_gen import generate_prompt_df, RUBRICS_DIR
 
 def generate_rewardbench_prompt():
     ds = load_dataset("allenai/reward-bench")['filtered']    
     new_ds = ds.rename_column('prompt', 'input')
 
-    new_ds = generate_prompt_df(df=new_ds, rubric_load_path=PAIRWISE_RUBRIC_TEMPLATE_PATH,
+    new_ds = generate_prompt_df(df=new_ds, rubric_load_path=os.path.join(RUBRICS_DIR, "rewardbench", "rewardbench_rubric.json"),
                             evaluation_mode='pairwise', input_data_column='input',
                             response_column='chosen', second_response_column='rejected')
 

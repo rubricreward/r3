@@ -1,6 +1,7 @@
-from .rubric_prompt_gen import generate_prompt_df, PAIRWISE_RUBRIC_TEMPLATE_PATH
-
+import os
 from datasets import load_dataset, Dataset
+
+from .rubric_prompt_gen import generate_prompt_df, RUBRICS_DIR
 
 def generate_rmbench_prompt():
     dataset = load_dataset("THU-KEG/RM-Bench")['train']
@@ -26,7 +27,7 @@ def generate_rmbench_prompt():
                 })
 
     new_ds = Dataset.from_list(final_dataset_list)
-    new_ds = generate_prompt_df(df=new_ds, rubric_load_path=PAIRWISE_RUBRIC_TEMPLATE_PATH,
+    new_ds = generate_prompt_df(df=new_ds, rubric_load_path=os.path.join(RUBRICS_DIR, "rmbench", "rmbench_rubric.json"),
                             evaluation_mode='pairwise', input_data_column='input', response_column='chosen',
                             second_response_column='rejected')
 

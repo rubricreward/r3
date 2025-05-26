@@ -7,9 +7,9 @@ import json
 
 XSUM_CSV_PATH = os.path.join(ROOT_DIR, 'data', 'others', 'xsum_scores_annotated.csv')
 XSUM_RUBRIC_PATH = {
-    'faithfulness': os.path.join(RUBRICS_DIR, "xsum_faithfulness_rubric.json"),
-    'coherence': os.path.join(RUBRICS_DIR, "xsum_coherence_rubric.json"),
-    'relevance': os.path.join(RUBRICS_DIR, "xsum_relevance_rubric.json"),
+    'faithfulness': os.path.join(RUBRICS_DIR, "xsum", "xsum_faithfulness_rubric.json"),
+    'coherence': os.path.join(RUBRICS_DIR, "xsum", "xsum_coherence_rubric.json"),
+    'relevance': os.path.join(RUBRICS_DIR, "xsum", "xsum_relevance_rubric.json"),
 }
 
 METRICS_LIST = ["coherence", "relevance"]

@@ -1,10 +1,10 @@
 import random
-
+import os
 import pandas as pd
 from datasets import Dataset, load_dataset
 from tqdm import tqdm
 
-from .rubric_prompt_gen import generate_prompt, BINARY_RUBRIC_TEMPLATE_PATH
+from .rubric_prompt_gen import generate_prompt, RUBRICS_DIR
 
 OPTION_LABELS = ["(A)", "(B)", "(C)", "(D)"]
 
@@ -29,7 +29,7 @@ def generate_mmlustem_prompt():
             chosen = OPTION_LABELS[answer_idx]
 
             prompt = generate_prompt(
-                rubric_load_path=BINARY_RUBRIC_TEMPLATE_PATH,
+                rubric_load_path=os.path.join(RUBRICS_DIR, "mmlustem", "mmlustem_rubric.json"),
                 evaluation_mode="binary",
                 input_data=input_str,
                 response=chosen,
