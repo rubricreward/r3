@@ -58,9 +58,9 @@ R3 is trained on a diverse, carefully curated mix of point-wise, pair-wise, and 
 - **🧠 Reasoning Tasks**: Focuses on math and code evaluations using datasets like *Math-Step-DPO-10K* and *AceCodePair-300K*, with annotations targeting correctness and reasoning quality.
 - **✅ Classification & Factuality**: Encompasses factual consistency, summarization quality, and NLI tasks. Key datasets: *GLUE*, *SuperGLUE*, *SummEval*, *FeedbackCollection*, *PreferenceCollection*, and *EVOUNA*. These span both rubric-driven binary classification and pairwise preference setups.
 
-Together, this diverse dataset mix powers R3’s generalization and robustness across evaluation dimensions and task formats.
+This diverse dataset mix powers R3's generalization and robustness across evaluation dimensions and task formats.
 
-## Setup Instruction
+## ⚙️ Setup Instruction
 
 Python 3.10 or higher are recommended. To install required dependencies, simply run `pip install -e .` as it will automatically setup everything. Details of dependencies are in `setup.py`.
 
