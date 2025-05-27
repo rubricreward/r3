@@ -26,11 +26,11 @@
 
 ## 📦 Contents
 
-+ [🤔 Why R3?](#why-r3)
-+ [⚙️ Setup Instructions](#setup-instructions)
-+ [🚀 Using Our Model (Inference & Deployment)](#using-our-model-inference--deployment)
-+ [🧩 Using Our Codebase](#using-our-codebase)
-+ [📚 Citation](#citation)
++ [🤔 Why R3?](#-why-r3)
++ [⚙️ Setup Instructions](#%EF%B8%8F-setup-instruction)
++ [🚀 Using Our Model (Inference & Deployment)](#-using-our-model-inference--deployment)
++ [🧩 Using Our Codebase](#-using-our-codebase)
++ [📚 Citation](#-citation)
 
 ## 🤔 Why R3?
 
