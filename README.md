@@ -2,13 +2,13 @@
 
 <p align="left">
   <a href="https://huggingface.co/collections/rubricreward/r3-models-681eaf578072a433274f5a99">
-    <img src="https://img.shields.io/badge/HuggingFace-R3%20Models-yellow.svg?logo=huggingface&logoColor=white" alt="HF Models"/>
+    <img src="https://img.shields.io/badge/HF-R3%20Models-yellow.svg?logo=huggingface&logoColor=white" alt="HF Models"/>
   </a>
   <a href="https://huggingface.co/collections/rubricreward/r3-datasets-682819071912cad389d265d8">
-    <img src="https://img.shields.io/badge/HuggingFace-R3%20Datasets-orange.svg?logo=huggingface&logoColor=white" alt="Training Datasets"/>
+    <img src="https://img.shields.io/badge/HF-R3%20Datasets-orange.svg?logo=huggingface&logoColor=white" alt="Training Datasets"/>
   </a>
   <a href="https://huggingface.co/collections/rubricreward/r3-benchmark-datasets-682d26d02283cdbf701f5365">
-    <img src="https://img.shields.io/badge/HuggingFace-R3%20Evaluation%20Datasets-orange.svg?logo=huggingface&logoColor=white" alt="Evaluation Datasets"/>
+    <img src="https://img.shields.io/badge/HF-R3%20Evaluation%20Datasets-orange.svg?logo=huggingface&logoColor=white" alt="Evaluation Datasets"/>
   </a>
   <a href="https://arxiv.org/abs/2505.13388">
     <img src="https://img.shields.io/badge/arXiv-b31b1b.svg?style=flat&logo=arxiv&logoColor=white" alt="arXiv"/>
