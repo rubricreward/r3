@@ -1,9 +1,11 @@
 import json
 import os
 import argparse
-
-from datasets import load_dataset
+import re
 import logging 
+
+import pandas as pd
+from datasets import load_dataset
 
 TOKENIZER = None
 MODEL = None
@@ -119,7 +121,7 @@ if __name__ == '__main__':
         # Load generated responses across seeds
         records = []
         for seed in range(5):
-            file_path = os.path.join(output_folder, f"eval_qwen3_4b_{seed}.json")
+            file_path = os.path.join(args.output_folder, f"eval_qwen3_4b_{seed}.json")
             with open(file_path, 'r') as f:
                 data = json.load(f)
             for entry in data:
@@ -133,7 +135,7 @@ if __name__ == '__main__':
         filtered_dataset_df = filtered_dataset.to_pandas()
 
         # Merge with actual scores
-        df_merged = df_responses.merge(df_actual, on='id', how='left')
+        df_merged = pd.merge(df_responses, filtered_dataset_df, on='id', how='left')
 
         # Check correctness per response
         df_merged['response_score'] = df_merged['response_score'].astype(str)
